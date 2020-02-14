@@ -1,7 +1,7 @@
 FROM squareslab/manybugs:gzip
 
 ARG perl
-RUN perlbrew install "perl-${perl}" && \
+RUN perlbrew --notest install "perl-${perl}" && \
     perlbrew use "perl-${perl}"
 ENV PERLBREW_PERL "perl-${perl}"
 ENV PATH "${PERLBREW_ROOT}/perls/perl-${perl}/bin:${PATH}"
